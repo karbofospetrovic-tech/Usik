@@ -5,4 +5,4 @@ primary_region = "fra"
   builder = "paketobuildpacks/builder:base"
 
 [env]
-  PYTHON_VERSION = "3.12.1"
+  PYTHON_VERSION = "3.11.9"
