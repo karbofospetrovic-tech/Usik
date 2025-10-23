@@ -1,9 +1,9 @@
-app = "usik"
-primary_region = "fra"
+app = "voice-translator-bot"primary_region = "fra"
 
 [build]
   builder = "paketobuildpacks/builder:base"
 
 [env]
   PYTHON_VERSION = "3.12.1"
+
 
