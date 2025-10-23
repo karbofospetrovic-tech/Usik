@@ -1,9 +1,18 @@
-app = "voice-translator-bot"primary_region = "fra"
+app = "voice-translator-bot"
+kill_signal = "SIGINT"
+kill_timeout = 5
+primary_region = "fra"
 
 [build]
   builder = "paketobuildpacks/builder:base"
+  buildpacks = ["gcr.io/paketo-buildpacks/python"]
 
 [env]
   PYTHON_VERSION = "3.12.1"
 
+[experimental]
+  auto_rollback = true
 
+[[services]]
+  protocol = "tcp"
+  internal_port = 8080
