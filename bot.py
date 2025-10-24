@@ -1,4 +1,24 @@
 import os
+from flask import Flask
+import threading
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Telegram Bot is running!"
+
+@app.route('/health')
+def health():
+    return "OK"
+
+def run_web_server():
+    port = int(os.environ.get('PORT', 8080))
+    app.run(host='0.0.0.0', port=port)
+
+# Ваш существующий код бота оставьте ниже
+# ... ваш текущий код ...
+import os
 import logging
 from telegram import Update
 from telegram.ext import Application, MessageHandler, filters, ContextTypes
@@ -118,4 +138,13 @@ def main():
     app.run_polling()
 
 if __name__ == '__main__':
+    if __name__ == '__main__':
+    # Запускаем веб-сервер
+    web_thread = threading.Thread(target=run_web_server)
+    web_thread.daemon = True
+    web_thread.start()
+    
+    # Здесь запуск вашего бота
+    # Например: bot.polling() или bot.infinity_polling()
+
     main()
