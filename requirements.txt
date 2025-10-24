@@ -4,3 +4,5 @@ SpeechRecognition
 pydub
 gunicorn
 gtts
+flask
+gunicorn
