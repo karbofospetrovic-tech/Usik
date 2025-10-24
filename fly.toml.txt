@@ -7,20 +7,16 @@ primary_region = "fra"
 [env]
   PORT = "8080"
 
-# ЯВНО указываем команду запуска
 [processes]
-web = "python app.py"  # ← ВАЖНО!
+web = "python app.py"
 
 [[services]]
   internal_port = 8080
   protocol = "tcp"
-  processes = ["web"]  # ← ссылаемся на процесс выше
+  processes = ["web"]
   
   [[services.ports]]
     handlers = ["http"]
     port = 80
-  
-  [[services.ports]]
-    handlers = ["tls", "http"]
-    port = 443
+
 
