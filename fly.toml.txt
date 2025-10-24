@@ -2,7 +2,7 @@ app = "tg-voice-translator"
 primary_region = "fra"
 
 [build]
-  builder = "heroku/buildpacks:20"
+  builder = "paketobuildpacks/builder:base"
 
 [env]
   PORT = "8080"
@@ -18,5 +18,6 @@ web = "python app.py"
   [[services.ports]]
     handlers = ["http"]
     port = 80
+
 
 
